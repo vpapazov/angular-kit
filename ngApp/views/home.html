@@ -1,0 +1,11 @@
+<h2>Home</h2>
+
+<form name="myForm">
+<input name="title" type="text" placeholder="title" ng-model="controller.movie.title" required>
+<input name="director" type="text" placeholder="director" ng-model="controller.movie.director" required>
+<button type="button" ng-click="controller.addMovie({title: myForm.title.$valid, director: myForm.director.$valid})">Add Movie</button>
+</form>
+
+<ul>
+  <li ng-repeat="m in controller.movies">{{m.title}} <a ng-click="controller.deleteMovie(m.id)">DELETE</a></li>
+</ul>
